@@ -6,15 +6,15 @@ export default function Cadastro () {
         <>
         <Container>
                 <Logo src={logo}/>
-            <form>
-                <div>
-                <input type="text" name="email" required placeholder="email"/>
-                <input type="text" name="senha" required placeholder="senha"/>
+            <Form>
+                <FormWrapper>
+                <input type="email" name="email" required placeholder="email"/>
+                <input type="password" name="senha" required placeholder="senha"/>
                 <input type="text" name="nome" required placeholder="nome"/>
-                <input type="text" name="foto" required placeholder="foto"/>
+                <input type="url" name="foto" required placeholder="foto"/>
                 <button type="submit">Entrar</button>
-                </div>
-            </form>
+                </FormWrapper>
+            </Form>
             <h1>Não tem uma conta? Cadastre-se!</h1>
         </Container>
         </>
@@ -36,7 +36,7 @@ flex-direction: column;
 
 input,button {
     height: 45px;
-    width: 90%;
+    width: 100%;
     border-radius: 10px;
     margin-top: 10px;
     font-size: 20px;
@@ -47,6 +47,27 @@ h1 {
     font-size: 15px;
 }
 `
+
+const Form = styled.form `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* ou um valor fixo, como 300px */
+    max-width: 400px;
+`
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+`
+
+// alt shift A
 
 
         

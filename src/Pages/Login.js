@@ -6,13 +6,13 @@ export default function Login () {
     return (
         <Container>
                 <Logo src={logo}/>
-            <form>
-                <div>
+            <Form>
+                <FormWrapper>
                 <input type="text" name="email" required placeholder="email"/>
                 <input type="text" name="senha" required placeholder="senha"/>
                 <button type="submit">Entrar</button>
-                </div>
-            </form>
+                </FormWrapper>
+            </Form>
             <h1>Não tem uma conta? Cadastre-se!</h1>
         </Container>
     )
@@ -42,4 +42,23 @@ h1 {
     padding-top: 15px;
     font-size: 15px;
 }
+`
+
+const Form = styled.form `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* ou um valor fixo, como 300px */
+    max-width: 400px;
+`
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
 `

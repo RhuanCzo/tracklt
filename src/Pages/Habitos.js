@@ -6,47 +6,50 @@ export default function Habitos() {
         <Container>
             <NavBar>
                 TrackIt
-                <img src={Bob} />
+                <img src={Bob} alt="Avatar" />
             </NavBar>
+
             <Conteudo>
                 <header>
                     Meus hábitos
                     <button>+</button>
                 </header>
+
                 <CriadorHabito>
                     <input type="text" placeholder="nome do hábito" />
                     <ContainerDias>
+                        <button>D</button>
+                        <button>S</button>
                         <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
+                        <button>Q</button>
+                        <button>Q</button>
+                        <button>S</button>
+                        <button>S</button>
                     </ContainerDias>
                     <footer>
-                        cancelar
+                        <span>Cancelar</span>
                         <button>Salvar</button>
                     </footer>
                 </CriadorHabito>
+
                 <Habito>
-                    <header>
-                    Ler 1 capítulo de livro
-                    </header>
+                    <header>Ler 1 capítulo de livro</header>
                     <ContainerHabito>
+                        <button>D</button>
+                        <button>S</button>
                         <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
-                        <button>T</button>
+                        <button>Q</button>
+                        <button>Q</button>
+                        <button>S</button>
+                        <button>S</button>
                     </ContainerHabito>
                 </Habito>
-                <div>
+
+                <MensagemVazia>
                     Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
-                </div>
+                </MensagemVazia>
             </Conteudo>
+
             <Footer>
                 Habitos
                 <div>Hoje</div>
@@ -56,153 +59,163 @@ export default function Habitos() {
     )
 }
 
+
 const Container = styled.div`
-height: 100dvh;
-background-color: #CFCFCF;
+  height: 100dvh;
+  background-color: #CFCFCF;
+  display: flex;
+  flex-direction: column;
 `
 const NavBar = styled.div`
-background-color: #126BA5;
-display:flex;
-align-items: center;
-justify-content: space-between;
-height: 8%;
-width: 100%;
-font-size: 30px;
-img {
+  background-color: #126BA5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  color: white;
+  font-size: 28px;
+
+  img {
     border-radius: 30px;
-    height:50px;
+    height: 50px;
     width: 50px;
-}
+  }
 `
 const Conteudo = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  flex: 1;
+  margin: 20px auto 120px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
 
-header {
+  header {
     color: #126BA5;
-    width: 100%;
-    display:flex;
-    margin: 10px;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 25px;
-}
-button{
-    background-color: aqua;
-    width: 40px;
-    height: 35px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
+    font-size: 24px;
+    margin-bottom: 10px;
 
-div {
-    width: 90%;
-    padding: 10px;
-    font-size: 21px;
-    text-align: start;
-}
-`
-const Footer = styled.div`
-background-color: aqua;
-height: 10%;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: space-around;
-position: fixed;
-bottom: 0;
-
-div {
-    background-color: aliceblue;
-    height: 90px;
-    width: 90px;
-    border-radius: 50px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom:50px ;
-}
+    button {
+      background-color: #52B6FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 40px;
+      height: 35px;
+      font-size: 24px;
+    }
+  }
 `
 const CriadorHabito = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 150px;
-border-radius: 15px ;
-background-color: #ffffff;
-margin-top: 15px;
-
-input {
-    width: 90%;
-    height: 40px;
-    margin-top: 10px;
+    background-color: #ffffff;
     border-radius: 10px;
-    font-size: 21px ;
-}
-
-footer{
-    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-size: 20px;
-}
 
-button {
-    margin-left: 10px;
-    height: 35px;
-    width: 25%;
-    font-size: 20px;
-}
+  input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    font-size: 18px;
+  }
 
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      color: #52B6FF;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #52B6FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      height: 35px;
+      width: 80px;
+      font-size: 16px;
+    }
+  }
 `
 const ContainerDias = styled.div`
-width: 100%;
-display: flex;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
 
-button {
+  button {
     background-color: #ffffff;
-    height: 30px;
-    width: 30px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    border: 1px solid #D5D5D5;
+    font-size: 16px;
+  }
 `
 const Habito = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 120px;
-border-radius: 15px ;
-background-color: #ffffff;
-margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
 
-header{
-
-}
-
+  header {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+  }
 `
 const ContainerHabito = styled.div`
-width: 100%;
-display: flex;
-background-color: aliceblue;
-display: flex;
-justify-content: space-around;
+  display: flex;
+  gap: 5px;
 
-button {
+  button {
     background-color: #ffffff;
-    height: 30px;
-    width: 30px;
-    border-radius: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    border: 1px solid #D5D5D5;
+    font-size: 16px;
+  }
+`
+const MensagemVazia = styled.div`
+  font-size: 18px;
+  color: #666;
+  margin-top: 20px;
+`
+const Footer = styled.div`
+  color: #52B6FF;
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  div {
+    background-color: #52B6FF;
+    color: #fff;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-    `
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+`
